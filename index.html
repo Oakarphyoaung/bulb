@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bulb</title>
+    <style>
+        body{
+            height: 400px;
+        }
+      img {
+        
+        
+      }
+      .main{
+        width: 100vw;
+        padding: 100px;
+        margin: 100px;
+        text-align: center;
+        border-color: yellow;
+        border: 2px;
+        background-color: aqua;
+      }
+      .detectArea{
+        width: 200px;
+        height: 200px;
+        border: 2px solid;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="main">
+        <h1 style="color:rgb(127, 127, 54)">Bulb Mini Project</h1>
+        <br><br>
+        <img src="pic_bulboff.gif" id="bulb" alt="" />
+        <br /><br />
+        <div class="">
+          <button onclick="lightOn()">Light On</button>
+          <button onclick="lightOff()">Light Off</button>
+        </div>
+        <br><hr><br>
+        <div>
+            <button onclick="toggleSwitch()">Touch Bottom</button>
+        </div>
+
+        <hr>
+        <div>
+          <button onclick="toggleSwitch()">Switch 1</button>
+          <button onclick="toggleSwitch()">Switch 2</button>
+        </div>
+        <hr>
+        <div class="detectArea">
+          Detected Area
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+          let lightbulb = document.getElementById("bulb");
+    
+          lightOn = () => {
+            lightbulb.setAttribute("src", "pic_bulbon.gif");
+          };
+          lightOff = () => {
+            lightbulb.setAttribute("src", "pic_bulboff.gif");
+          };
+          toggleSwitch = () =>{
+            if(lightbulb.getAttribute("src") == "pic_bulbon.gif"){
+
+                lightOff();
+            }else{
+                lightOn();
+            }
+          }
+          document.querySelector(".detectArea").addEventListener("mouseenter",function(){
+            lightOn()
+            setTimeout(lightOff,3000);
+          })
+
+
+
+
+        </script>
+
+    </div>
+   
+  </body>
+</html>
